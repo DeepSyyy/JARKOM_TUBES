@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3f51b5;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #3f51b5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Word Display</h1>
+        <form id="wordForm">
+            <input type="text" id="wordInput" placeholder="Enter a word">
+            <input type="submit" value="Submit">
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("wordForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            var wordInput = document.getElementById("wordInput");
+            var result = document.getElementById("result");
+
+            result.textContent = "You entered: " + wordInput.value;
+            wordInput.value = ""; // Clear the input field
+        });
+    </script>
+</body>
+
+</html>
