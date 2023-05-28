@@ -4,11 +4,10 @@ import requestHandler # mengimport requestHandler
 def threading_socket(connectionSocket):
     try: # menangkap error
         request = connectionSocket.recv(1024).decode() # menerima request dari client
-        print(request) # print request
+        print(f'\nrequest: {request}')# print request
         header = request.split('\n') # memisahkan request berdasarkan \n
-        print(header) # print header
-        print(header[0]) # print header[0]
-        print(header[0].split()[1]) # print header[0].split()[1]
+        print('header[1]:',header[1]) # print header[0]
+        print('Header file name :',header[0].split()[1]) # print header[0].split()[1]
         response = requestHandler.requestHandler(filename=header[0].split()[1]) # memanggil fungsi requestHandler
         connectionSocket.send(response.encode()) # mengirim response ke client
         connectionSocket.send("\r\n".encode()) # mengirim response ke client
