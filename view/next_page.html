@@ -61,7 +61,22 @@
             cursor: pointer;
         }
 
+        .next-button {
+            margin-top: 20px;
+            background-color: #3f51b5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
         .back-button:hover {
+            background-color: #303f9f;
+        }
+
+        .next-button:hover {
             background-color: #303f9f;
         }
     </style>
@@ -76,6 +91,7 @@
         </form>
         <div id="result"></div>
         <button class="back-button" onclick="goBack()">Back</button>
+        <button class="next-button" onclick="goBack()">Url-searching</button>
     </div>
 
     <script>
@@ -90,6 +106,9 @@
         });
         function goBack() {
             window.history.back();
+        }
+        function goBack() {
+            window.location.href = "url_searching.html";
         }
     </script>
 </body>

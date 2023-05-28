@@ -1,3 +1,4 @@
+### Mengimport yang dibutuhkan seperti threading dan socket
 import threading
 import requestHandler
 def threading_socket(connectionSocket):

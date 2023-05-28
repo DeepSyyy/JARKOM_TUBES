@@ -11,8 +11,10 @@ def requestHandler(filename):
         message_body = fin.read()
         fin.close()
     except FileNotFoundError:
+        fin = open("view/not_found.html", "r")
         response_line = "HTTP/1.1 404 Not Found\r\n"
-        message_body = "<html><body><h1>Error 404: File not found</h1></body></html>"
+        message_body = fin.read()
+        fin.close()
     
     response = response_line + response_header + message_body
     return response
